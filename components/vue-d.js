@@ -5,6 +5,7 @@ Vue.component ('vued', {
     <h3> asd </h3>
     <a :href="link.href">A</a>
     <d-html></d-html>
+    <asd></asd>
     </div>`,
     data(){
         return{
@@ -17,6 +18,7 @@ Vue.component ('vued', {
             
     },
     components: {
-        'd-html': directiveHtml
+        'd-html': directiveHtml,
+        'asd': directiveShow
     }
 })
