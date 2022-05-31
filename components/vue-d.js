@@ -1,13 +1,19 @@
 
 Vue.component ('vued', {
+    
     template:`<div>
+    
     <h1 v-text="title"> </h1>
     <h3> asd </h3>
     <a :href="link.href">A</a>
     <d-html></d-html>
-    <asd></asd>
+    <d-show/>
+    <d-if/>
+    <d-f/>
+    <d-on/>
     </div>`,
     data(){
+        
         return{
             title: 'directivas con vue',
             link: {
@@ -19,6 +25,9 @@ Vue.component ('vued', {
     },
     components: {
         'd-html': directiveHtml,
-        'asd': directiveShow
+        'd-show': directiveShow,
+        'd-if': directiveIf,
+        'd-f':directiveFor,
+        'd-on': directiveOn,
     }
 })
