@@ -2,7 +2,6 @@
 Vue.component ('vued', {
     
     template:`<div>
-    
     <h1 v-text="title"> </h1>
     <h3> asd </h3>
     <a :href="link.href">A</a>
@@ -11,6 +10,7 @@ Vue.component ('vued', {
     <d-if/>
     <d-f/>
     <d-on/>
+    <directiveModel/>
     </div>`,
     data(){
         
@@ -29,5 +29,6 @@ Vue.component ('vued', {
         'd-if': directiveIf,
         'd-f':directiveFor,
         'd-on': directiveOn,
+        directiveModel,
     }
 })
