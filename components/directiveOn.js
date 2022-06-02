@@ -1,7 +1,7 @@
 let directiveOn = {
     template:`<div>
     <h1 v-html="title"></h1>
-    <button :class="'btn btn-dark'" v-on:click="clic"> Clicka</button>
+    <button :class="'btn btn-dark'" v-on:click.stop="clic"> Clicka</button>
     <button :class="'btn btn-warning'" @click="comprar">Comprar</button>
     </div>`,
     data(){
