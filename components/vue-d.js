@@ -11,6 +11,8 @@ Vue.component ('vued', {
     <d-f/>
     <d-on/>
     <directiveModel/>
+    <directiveSlot/>
+
     </div>`,
     data(){
         
@@ -30,5 +32,6 @@ Vue.component ('vued', {
         'd-f':directiveFor,
         'd-on': directiveOn,
         directiveModel,
+        directiveSlot,
     }
 })

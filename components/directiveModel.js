@@ -14,10 +14,11 @@ let directiveModel = {
                     <input :value="pelicula" type="checkbox" v-model="favoritas"/>
                     {{pelicula}}
                 </label>
-                <div v-if="favoritas.length > 0" v-show="favoritas">
-                    <ul v-model="favoritas>  </ul>
-                </div>
-                <div v-else v-show"nada"/>
+                <div >
+                    <ul v-show="favoritas.length > 0">
+                        <li v-for="(pelicula, key) in favoritas" :key="key"  v-html="pelicula"></li>
+                    </ul>
+                    <ul></ul>
                 </div>`,
     data(){
         return{
