@@ -4,7 +4,8 @@ Vue.component ('computed-1', {
     
     <h1 v-text="title"></h1>
     <h3 v-text="message"></h3>
-    <p>{{ fullName}} </p>
+    <p>{{ fullName}}  {{ age }} </p>
+
     </div>`,
     data(){
         return{
@@ -20,7 +21,12 @@ Vue.component ('computed-1', {
     },
     computed: {
         fullName (){
-            return ` Nombre completo : ${this.user.name}  ${this.user.last} born in ${this.user.year}`
+            return ` Nombre  completo : ${this.user.name}  ${this.user.last} born in ${this.user.year}`
+        },
+        age (){
+             let dia = new Date()
+
+            return  `Hoy tiene ${dia.getFullYear() - this.user.year} años de edad ` 
         }
     }
 })

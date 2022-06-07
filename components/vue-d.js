@@ -12,6 +12,7 @@ Vue.component ('vued', {
     <d-on/>
     <directiveModel/>
     <directiveSlot/>
+    <directiveOnce></directiveOnce>
 
     </div>`,
     data(){
@@ -33,5 +34,6 @@ Vue.component ('vued', {
         'd-on': directiveOn,
         directiveModel,
         directiveSlot,
+        directiveOnce,
     }
 })
