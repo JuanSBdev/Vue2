@@ -3,8 +3,7 @@ Vue.component ('c-getset', {
     template:`<div>
     
     <h1 v-text="title"></h1>
-    <h3 v-text="message"></h3>
-    <p>{{ fullName}}  {{ age }} </p>
+    <p>Hola soy {{ fullName }} </p>
 
     </div>`,
     data(){
@@ -20,14 +19,17 @@ Vue.component ('c-getset', {
             
     },
     computed: {
-        fullName (){
-            return ` Nombre  completo : ${this.user.name}  ${this.user.last} born in ${this.user.year}`
+        fullName: {
+            get (){
+                return ` ${this.user.name}  ${this.user.last} `
+            },
+            set (newValue){
+                let name2 = newValue.split(' ')
+                
+                this.user.name = name2[0]
+                this.user.last = name2[1]
+            }
         },
-        age (){
-             let dia = new Date()
-
-            return  `Hoy tiene ${dia.getFullYear() - this.user.year} años de edad ` 
-        }
     }
 })
 
