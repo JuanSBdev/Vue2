@@ -8,26 +8,22 @@
 </head>
 <body>
     <div id="app">
-        <computed-1></computed-1>
-        <c-getset></c-getset>
+        <h1 v-text="title">
+        </h1>
+        <prop-comp></prop-comp>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-
-    <script src="./components/computed.js"></script>
-    <script src="./components/getSet.js"></script>
+    <script src="./components/movies/moviesComp.js"></script>
+    <script src="./components/propComp.js"></script>
     <script>
         let vm = new Vue({
-
             el: '#app',
-            data () {
+            data(){
                 return {
+                    title: 'compartiendo data a componente hijos [props] '
                 }
             }
-        })
-        </script></body>
-        <style>
-            h1{
-                font-size: 3rem;
-            }
-        </style>
+        } )
+    </script>
+</body>
 </html>

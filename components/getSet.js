@@ -14,7 +14,8 @@ Vue.component ('c-getset', {
                 name: 'Jhony',
                 last: 'Rain',
                 year:'1996'
-            }
+            },
+            
         }
             
     },
@@ -24,12 +25,13 @@ Vue.component ('c-getset', {
                 return ` ${this.user.name}  ${this.user.last} `
             },
             set (newValue){
-                let name2 = newValue.split(' ')
+                let name2 = newValue.split('  ')
                 
                 this.user.name = name2[0]
                 this.user.last = name2[1]
             }
         },
     }
+    
 })
 
