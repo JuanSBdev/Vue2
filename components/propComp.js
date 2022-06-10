@@ -2,7 +2,14 @@ Vue.component ('prop-comp',{
     template:`
     <div>
         <h1> Peliculas Props</h1>
-        <moviesComp v-for="(movie, key) in movies" :key="key" :id="movie.id" :synopsis="movie.synopsis" :cover="movie.cover" :title="movie.title"/>
+        <moviesComp v-for="(movie, key) in movies"
+        :key="key"
+        :id="movie.id"
+        :synopsis="movie.synopsis"
+        :cover="movie.cover"
+        :title="movie.title"
+        :like="movie.like"
+            />
 
     </div>`,  
     data(){
@@ -23,7 +30,7 @@ Vue.component ('prop-comp',{
                 {
                     id: 3,
                     title: 'Toy Story',
-                    cover: 'https://i.pinimg.com/originals/b1/6f/43/b16f43aa809d644e45e056eb64eaf45e.jpg'
+                    cover: 'https://i.pinimg.com/originals/b1/6f/43/b16f43aa809d644e45e 056eb64eaf45e.jpg'
                 }
             ]
         }
