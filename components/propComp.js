@@ -13,7 +13,7 @@ Vue.component ('prop-comp',{
             />
 
 
-            <movieFav></movieFav>
+            <movieFav v-if="showLike"></movieFav>
     </div>`,  
     data(){
         return {
@@ -51,7 +51,8 @@ Vue.component ('prop-comp',{
             let movieLike = this.movies.find( movie => movie.id == data.id )
             movieLike.like = data.like
             console.log(movieLike.like)
-            alert( `${  movieLike.like ? movieLike.title + ' ' +'agregada a favoritos' : movieLike.title + ' ' + 'quitada de favoritos' } ` )
+            this.showLike = data.like
+            //alert( `${  movieLike.like ? movieLike.title + ' ' +'agregada a favoritos' : movieLike.title + ' ' + 'quitada de favoritos' } ` )
         }
     }
     } )
