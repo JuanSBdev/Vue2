@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="app">
-        <h1 v-text="title">
-        </h1>
-        <prop-comp></prop-comp>
-    </div>
-    <style>
-        .movieFav-wrapper{
-    background: rgb(201, 117, 117);
+.movieFav-wrapper{
+    background: #fff;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -83,21 +68,3 @@
         opacity: 0;
     }
 }
-    </style>
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <script src="./components/movies/movieFav.js"></script>
-    <script src="./components/movies/moviesComp.js"></script>
-    <script src="./components/propComp.js"></script>
-    <script>
-        let vm = new Vue({
-            el: '#app',
-            data(){
-                return {
-                    title: 'compartiendo data a componente hijos [props] '
-                }
-            }
-        } )
-    </script>
-</body>
-</html>
