@@ -3,6 +3,7 @@ Vue.component ('prop-comp',{
     <div>
         <h1> Peliculas Props</h1>
         <moviesComp v-for="(movie, key) in movies"
+        v-if=" !showLike "
         :key="key"
         :id="movie.id"
         :synopsis="movie.synopsis"
