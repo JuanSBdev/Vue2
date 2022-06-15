@@ -3,7 +3,7 @@ Vue.component ('prop-comp',{
     <div>
         <h1> Peliculas Props</h1>
         <moviesComp v-for="(movie, key) in movies"
-        v-if=" !showLike "
+        v-if="!showLike "
         :key="key"
         :id="movie.id"
         :synopsis="movie.synopsis"
@@ -11,10 +11,11 @@ Vue.component ('prop-comp',{
         :title="movie.title"
         :like ="movie.like"
         @toggleLike = "onToggleLike"
+        
             />
 
 
-            <movieFav v-if="showLike"></movieFav>
+            <movieFav v-if="showLike" @hideFav="onHideFav" class="movieFav"></movieFav>
     </div>`,  
     data(){
         return {
@@ -51,9 +52,12 @@ Vue.component ('prop-comp',{
         onToggleLike(data){
             let movieLike = this.movies.find( movie => movie.id == data.id )
             movieLike.like = data.like
-            console.log(movieLike.like)
             this.showLike = data.like
+
             //alert( `${  movieLike.like ? movieLike.title + ' ' +'agregada a favoritos' : movieLike.title + ' ' + 'quitada de favoritos' } ` )
-        }
+        },
+        onHideFav (show){
+            this.showLike = show
+        },
     }
     } )
