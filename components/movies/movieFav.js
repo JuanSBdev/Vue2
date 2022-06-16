@@ -19,7 +19,6 @@ let movieFav = {
         console.log($element)
 
         $element.addEventListener('animationend', function(){
-            vm.$emit('hideFav', false)
         })
     }
 }}
