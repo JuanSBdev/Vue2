@@ -52,7 +52,7 @@ Vue.component ('prop-comp',{
         onToggleLike(data){
             let movieLike = this.movies.find( movie => movie.id == data.id )
             movieLike.like = data.like
-            this.showLike = data.like
+            //this.showLike = data.like
 
             //alert( `${  movieLike.like ? movieLike.title + ' ' +'agregada a favoritos' : movieLike.title + ' ' + 'quitada de favoritos' } ` )
         },
