@@ -1,6 +1,6 @@
 let movieFav = {
     template: `
-    <div v-show="show" class="movieFavWrapper">
+    <div v-if="!show" class="movieFavWrapper">
         <div :id = "'fav-'+ _uid"  >
         </div>
     </div>
@@ -15,10 +15,9 @@ let movieFav = {
 
     mounted (){
         let vm = this
-        let $element = document.getElementById(`fav-${this._uid}` )
-        console.log($element)
-
-        $element.addEventListener('animationend', function(){
+        let $element = document.getElementById(`fav-${this._uid}`)
+        $element.addEventListener('animationend', function () {
+            vm.$emit('update:show', false)
         })
     }
 }}
