@@ -8,7 +8,7 @@ let movieComp = {
         
                             <button class="btn"
                             :class="{
-                            'btn-dark': !like,
+                            'btn-warning': !like,
                             'btn-light': like
                                     }"
                             @click="toggleLike" v-text=" like ? 'favorita'  : 'agregar a favoritas'" ></button>
@@ -17,8 +17,6 @@ let movieComp = {
     data(){
         return {
             className: {
-                'btn-dark': true,
-                'btn-like': false
             }
         }
     },
