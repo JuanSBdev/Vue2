@@ -1,21 +1,22 @@
 Vue.component ('prop-comp',{
     template:`
-    <div>
+    <div class="container">
         <h1> Peliculas Props</h1>
-        <moviesComp v-for="(movie, key) in movies"
-        v-if="!showLike "
-        :key="key"
-        :id="movie.id"
-        :synopsis="movie.synopsis"
-        :cover="movie.cover"
-        :title="movie.title"
-        :like ="movie.like"
-        @toggleLike = "onToggleLike"
-        
-            />
+        <div class="row" >
+            <div class="col-12 col-sm-6 col-lg-3 center" v-for="(movie, key) in movies" :key="key">
+                <movieComp 
+                v-if="!showLike"
+                :key="key"
+                :id="movie.id"
+                :synopsis="movie.synopsis"
+                :cover="movie.cover"
+                :title="movie.title"
+                :like ="movie.like"
+                @toggleLike = "onToggleLike"/>
+            </div>
+        </div>
 
-
-            <movieFav v-if="showLike" @hideFav="onHideFav" class="movieFav"></movieFav>
+            <movieFav  v-if="showLike" @hideFav="onHideFav" class="movieFav"></movieFav>
     </div>`,  
     data(){
         return {
@@ -37,7 +38,7 @@ Vue.component ('prop-comp',{
                 {
                     id: 3,
                     title: 'Toy Story',
-                    cover: 'https://i.pinimg.com/originals/b1/6f/43/b16f43aa809d644e45e 056eb64eaf45e.jpg',
+                    cover: 'https://i.pinimg.com/originals/b1/6f/43/b16f43aa809d644e45e056eb64eaf45e.jpg',
                     like: false
                 }
             ],
@@ -45,7 +46,7 @@ Vue.component ('prop-comp',{
         }
     },
     components: {
-        moviesComp, movieFav,
+        movieComp, movieFav,
 
     },
     methods: {
