@@ -14,12 +14,7 @@ let movieComp = {
                             @click="toggleLike" v-text=" like ? 'favorita'  : 'agregar a favoritas'" ></button>
                         </div>
                 </div>`,
-    data(){
-        return {
-            className: {
-            }
-        }
-    },
+    
     props:{
         id: {
             type: Number,
